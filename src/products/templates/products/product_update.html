@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Do you want to update this data?</h1>
+<p>id: {{ obj.id }}</p>
+<p>title: {{ obj.title }}</p>
+<p>description: {{ obj.description }}</p>
+<p>price: {{ obj.price }}</p>
+
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+
+{% endblock %}

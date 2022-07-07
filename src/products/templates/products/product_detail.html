@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Product Page</h1>
+<h1>In App template</h1>
+<p><a href="./create/">Create new product</a></p>
+<ul>
+    {% for i in querySet %}
+        {% if i.description == "" %}
+            <li><a href="{{ i.get_absolute_url_view }}">{{i.id}}</a>: {{ i.title }} - {{i.price}} - {{ "Coming Soon" }}</li>
+        {% else %}
+            <li><a href="{{ i.get_absolute_url_view }}">{{i.id}}</a> {{ i.title }} - {{i.price}} - {{ i.description }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}

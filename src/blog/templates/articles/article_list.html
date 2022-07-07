@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+    {% for i in object_list %}
+        {% if i.content == "" %}
+            <li>{{i.id}}: {{ i.title }} - {{i.active}} - {{ "Coming Soon" }}</li>
+        {% else %}
+            <li>{{i.id}}: {{ i.title }} - {{i.active}} - {{ i.content }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+{% endblock %}

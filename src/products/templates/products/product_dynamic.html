@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>View one by one</h1>
+<h1>All products by routing</h1>
+<p>title: {{ obj.title }}</p>
+<p>description: {{ obj.description }}</p>
+<p>price: {{ obj.price }}</p>
+<h3>Wanna delete this data?</h3>
+<a href="{{ obj.get_absolute_url_delete }}">Delete</a>
+<h3>Wanna update this data?</h3>
+<a href="{{ obj.get_absolute_url_update }}">Update</a>
+
+{% endblock %}
